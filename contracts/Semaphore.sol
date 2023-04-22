@@ -6,8 +6,6 @@ import "./interfaces/IVerifier.sol";
 import "./base/SemaphoreCore.sol";
 import "./base/SemaphoreGroups.sol";
 
-
-
 /// @title Semaphore
 contract Semaphore is ISemaphore, SemaphoreCore, SemaphoreGroups{
     /// @dev Gets a tree depth and returns its verifier address.

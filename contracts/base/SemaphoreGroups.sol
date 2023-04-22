@@ -3,8 +3,8 @@ pragma solidity ^0.8.7;
 
 import {SNARK_SCALAR_FIELD} from "./SemaphoreConstants.sol";
 import "../interfaces/ISemaphoreGroups.sol";
-import "@zk-kit/incremental-merkle-tree.sol/IncrementalBinaryTree.sol";
 import "@openzeppelin/contracts/utils/Context.sol";
+import "@zk-kit/incremental-merkle-tree.sol/IncrementalBinaryTree.sol";
 
 /// @title Semaphore groups contract.
 /// @dev The following code allows you to create groups, add and remove members.
