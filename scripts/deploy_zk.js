@@ -55,23 +55,34 @@ async function main() {
     const semaphore = await Semaphore.deploy("16",verifier.address)
     console.log(`Semaphore contract has been deployed to: ${semaphore.address}`)
 
-    // Create three certificate of semaphore group
+    // contract address
+    const contract_addresses = {
+      "Semaphore": {
+          "address": semaphore.address
+      },
+      "Verifier": {
+          "address": verifier.address
+      }
+}
+
+    // Create four certificate of semaphore group
     const transaction_group1 = await semaphore.connect(deployer).createGroup(1, 16, BigInt(1), deployer.address)
     await transaction_group1.wait()
-    console.log(`Group A has created`)
+    console.log(`Group S has created`)
 
     const transaction_group2 = await semaphore.connect(deployer).createGroup(2, 16, BigInt(1), deployer.address)
     await transaction_group2.wait()
+    console.log(`Group A has created`)
+
+   
+    const transaction_group3 = await semaphore.connect(deployer).createGroup(3, 16, BigInt(1), deployer.address)
+    await transaction_group3.wait()
     console.log(`Group B has created`)
 
-    const contract_addresses = {
-          "Semaphore": {
-              "address": semaphore.address
-          },
-          "Verifier": {
-              "address": verifier.address
-          }
-  }
+    const transaction_group4 = await semaphore.connect(deployer).createGroup(4, 16, BigInt(1), deployer.address)
+    await transaction_group4.wait()
+    console.log(`Group C has created`)
+
   saveconfigaddress(contract_addresses);
 }
 
