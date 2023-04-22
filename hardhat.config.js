@@ -30,5 +30,12 @@ module.exports = {
       url: `https://rpc.goerli.linea.build/`,
       accounts: [process.env.MNEMONIC],
     },
+    thunderTestnet: {
+      url: 'https://testnet-rpc.thundercore.com',
+      chainId: 18,
+      gas: 90000000,
+      gasPrice: 30000000000,
+      accounts: [process.env.MNEMONIC]
+    }
   }
 };
