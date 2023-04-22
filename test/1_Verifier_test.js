@@ -6,7 +6,7 @@ const { generateProof, verifyProof , packToSolidityProof} = require("@semaphore-
 const { poseidonContract} =  require("circomlibjs")
 const fs = require('fs')
 
-let semaphore, User
+let semaphore, User, verifier
 
 describe("deploy contract", () => {
 
@@ -40,7 +40,7 @@ describe("deploy contract", () => {
                 IncrementalBinaryTree: incrementalBinaryTreeLib.address
             }
         })
-        const verifier = await verifier16.deploy()
+        verifier = await verifier16.deploy()
         console.log(`Successful deploy verifier address in :  ${verifier.address}`)
 
         // deploy semaphore
@@ -106,6 +106,17 @@ describe("deploy contract", () => {
         const verificationKey = JSON.parse(fs.readFileSync("./semaphore_file/semaphore.json", "utf-8"))
         const pass = await verifyProof(verificationKey, fullProof).then(v => v.toString())
         console.log("javascript off chain:", pass)
+
+        // test safe mint
+        ZKore = await ethers.getContractFactory("ZKore");
+        [owner] = await ethers.getSigners();
+        console.log(verifier.address)
+        zkore = await ZKore.deploy(verifier.address);
+        await zkore.deployed();
+        await zkore.connect(user1).safeMint(owner.address,...args);
+        const tokenURI = await zkore.connect(user1).tokenURI(0);
+        expect(tokenURI).to.equal("abc123");
+
     })
 })
 
