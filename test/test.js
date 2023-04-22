@@ -6,7 +6,7 @@ const { generateProof, verifyProof , packToSolidityProof} = require("@semaphore-
 const { poseidonContract} =  require("circomlibjs")
 const fs = require('fs')
 
-let semaphore, User
+let semaphore 
 
 describe("deploy contract", () => {
 
