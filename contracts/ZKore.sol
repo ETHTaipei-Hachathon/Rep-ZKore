@@ -20,7 +20,6 @@ contract ZKore is ERC721, Ownable {
         verifier = _verifier;
     }
 
-    // todo: verify proof here
     function safeMint(
         address to, 
         uint[2] memory a, 
@@ -33,6 +32,17 @@ contract ZKore is ERC721, Ownable {
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         emit SafeMint(to, tokenId);
+    }
+
+    // only for testing
+    function supperMint(
+        address to
+    ) public returns (uint) {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(to, tokenId);
+        emit SafeMint(to, tokenId);
+        return tokenId;
     }
 
     function burn(uint256 tokenId) external {
@@ -59,6 +69,6 @@ contract ZKore is ERC721, Ownable {
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "abc123";
+        return "ipfs://QmWkYwScsk8GVCKbvPzXfcvJDVkSHuHD2MXmgsJVq29ufk";
     }
 }
