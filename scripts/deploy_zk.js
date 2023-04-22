@@ -11,8 +11,10 @@ const tokens = (n) => {
   return ethers.utils.parseUnits(n.toString(), 'ether')
 }
 
-async function main() {
+const networkName = hre.network.name
 
+async function main() {
+    
     // Set deployer 
     const [deployer] = await ethers.getSigners()
     console.log("Deploying contracts with the account:", deployer.address);
@@ -82,12 +84,11 @@ function saveconfigaddress(contract_addresses) {
   }
 
   fs.writeFileSync(
-    contractsDir + `/config.json`,
+    contractsDir + `/${networkName}_config.json`,
     JSON.stringify(contract_addresses, undefined, 2)
    
   );
 }
-
 
 main().catch((error) => {
   console.error(error);
