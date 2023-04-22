@@ -35,7 +35,7 @@ contract ZKore is ERC721, Ownable {
     }
 
     // only for testing
-    function supperMint(
+    function superMint(
         address to
     ) public returns (uint) {
         uint256 tokenId = _tokenIdCounter.current();

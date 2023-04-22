@@ -33,6 +33,6 @@
 ## Testing Contract
 | Network | ZKore.sol |
 | ------- | ----------- | ---------------------- | ----------------------- |
-| Chiado  | 0xAd549A3c14feB8b5a0cB40b37D00312c07Ac55D5 |
-| Linea   | 0x0E8D9BB48A8D5520AEE4BbeE0cCB0667F0F0A7a0 |
-| ThunderCore Testnet  | 0xd94c45f18D16bff3A4d537A15c41B39aB648e559 |
+| Chiado  | 0x6Bf9CE2FD90553fF1c39dB40b044cA4DDa35eBDd |
+| Linea   | 0x046550482B6bfDBfF8d129b81e2A36585ce68735 |
+| ThunderCore Testnet  | 0x1C7E7CA1E7B6c819A325dc3d7eD1D1c6b271378e |

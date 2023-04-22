@@ -23,8 +23,8 @@ module.exports = {
       url: `https://rpc.chiadochain.net`,
       chainId: 10200,
       accounts: [process.env.MNEMONIC],
-      gas: 500000,
-      gasPrice: 1000000000
+      gas: 5_000_000,
+      gasPrice: 1_000_000_000
     },
     linea: {
       url: `https://rpc.goerli.linea.build/`,
