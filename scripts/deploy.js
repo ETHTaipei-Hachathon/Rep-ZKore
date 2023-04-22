@@ -8,7 +8,7 @@ const hre = require("hardhat");
 
 async function main() {
   const ZKore = await hre.ethers.getContractFactory("ZKore");
-  const zkore = await ZKore.deploy("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");
+  const zkore = await ZKore.deploy("0xAd549A3c14feB8b5a0cB40b37D00312c07Ac55D5");
 
   await zkore.deployed();
 
