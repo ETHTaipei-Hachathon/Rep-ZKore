@@ -36,6 +36,15 @@ module.exports = {
       gas: 90000000,
       gasPrice: 30000000000,
       accounts: [process.env.MNEMONIC]
-    }
+    },
+    oelri: {
+      url: "https://goerli.infura.io/v3/" + infuraProjectID,
+      accounts: {
+        mnemonic,
+        path: "m/44'/60'/0'/0",
+        initialIndex: 0,
+        count: 20,
+      },
+    },
   }
 };

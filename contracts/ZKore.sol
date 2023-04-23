@@ -69,6 +69,6 @@ contract ZKore is ERC721, Ownable {
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmWkYwScsk8GVCKbvPzXfcvJDVkSHuHD2MXmgsJVq29ufk";
+        return "ipfs://Qma6y6DkXuYtWAcN4sJsuf16YfRJUQuTAR1vL6TpqP9m4C";
     }
 }
