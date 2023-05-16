@@ -1,5 +1,5 @@
 # ZKore
-An application that can prove your reputation and credit score without revealing any personal information.
+An application that can prove user reputation and credit score without revealing any personal information.
 # Contract address
 
 ## Deployed Addresses

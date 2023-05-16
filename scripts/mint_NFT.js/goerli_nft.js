@@ -4,6 +4,7 @@ async function main() {
 
   let zkore = await hre.ethers.getContractAt("ZKore", ZKoreAddress);
 
+
   try {
     // await zkore.superMint("0xF16Aa7E201651e7eAd5fDd010a5a14589E220826").then(function(id) {
     //     console.log("id:", id);
@@ -21,6 +22,7 @@ async function main() {
       proof_json[3]
     ).then(function(result) {
       console.log(result);
+      console.log(proof_json[0]);
     });
     let balance = await zkore.balanceOf("0xF16Aa7E201651e7eAd5fDd010a5a14589E220826");
     console.log(balance);

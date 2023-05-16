@@ -34,7 +34,7 @@ contract ZKore is ERC721, Ownable {
         emit SafeMint(to, tokenId);
     }
 
-    // only for testing
+    // only for test
     function superMint(
         address to
     ) public returns (uint) {
